@@ -10,7 +10,6 @@ describe("06-Delegation", async function () {
         await deployments.fixture(["06"])
         delegate = await ethers.getContract("Delegate")
         delegation = await ethers.getContract("Delegation")
-        delegationAttack = await ethers.getContract("DelegationAttack", attacker.address)
     })
     it("should transfer ownership to the attacker", async function () {
         // check deployer is owner
@@ -30,15 +29,4 @@ describe("06-Delegation", async function () {
         const newOwner = await delegation.owner()
         assert.equal(newOwner, attacker.address)
     })
-    /*
-    it("should transfer ownership to attack contract", async function () {
-        // check deployer is owner
-        const initialOwner = await delegation.owner()
-        assert.equal(initialOwner, deployer.address)
-        // attack
-        await delegationAttack.attack()
-        // check attack contract is owner
-        const newOwner = await delegation.owner()
-        assert.equal(newOwner, delegationAttack.address)
-    })*/
 })

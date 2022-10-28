@@ -2,14 +2,13 @@ const { assert } = require("chai")
 const { deployments, ethers } = require("hardhat")
 
 describe("01-Fallback", async function () {
-    let deployer
-    let fallback
+    let deployer, attacker, fallback
     beforeEach(async function () {
         accounts = await ethers.getSigners()
         deployer = accounts[0]
         attacker = accounts[1]
         await deployments.fixture(["all"])
-        fallback = await ethers.getContract("Fallback", deployer.address)
+        fallback = await ethers.getContract("Fallback")
     })
     it("should transfer ownership to attacker", async function () {
         const owner = await fallback.owner()

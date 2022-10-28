@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.6.0;
 
-import "@openzeppelin/contracts/utils/math/SafeMath.sol";
+import "@openzeppelin/contracts/math/SafeMath.sol";
 import "../lessons/03-CoinFlip.sol";
 
 contract CoinFlipAttack {
@@ -9,9 +9,9 @@ contract CoinFlipAttack {
 
     uint256 private constant FACTOR =
         57896044618658097711785492504343953926634992332820282019728792003956564819968;
-    CoinFlip private immutable coinFlip;
+    CoinFlip private coinFlip;
 
-    constructor(address coinFlipAddress) {
+    constructor(address coinFlipAddress) public {
         coinFlip = CoinFlip(coinFlipAddress);
     }
 
