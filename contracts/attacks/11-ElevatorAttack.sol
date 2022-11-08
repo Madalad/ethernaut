@@ -2,7 +2,6 @@
 pragma solidity ^0.6.0;
 
 import "../lessons/11-Elevator.sol";
-import "hardhat/console.sol";
 
 contract ElevatorAttack is Building {
     Elevator elevator;
@@ -13,7 +12,7 @@ contract ElevatorAttack is Building {
         count = 0;
     }
 
-    function isLastFloor(uint256 _floor) external override returns (bool) {
+    function isLastFloor(uint256) external override returns (bool) {
         if (count % 2 == 0) {
             count++;
             return false;

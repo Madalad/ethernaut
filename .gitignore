@@ -8,4 +8,6 @@ typechain-types
 #Hardhat files
 cache
 artifacts
+deployments
 
+18-MagicNumAttack0.sol
