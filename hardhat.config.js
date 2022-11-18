@@ -9,6 +9,7 @@ require("dotenv").config()
 
 const MAINNET_RPC_URL = process.env.MAINNET_RPC_URL
 const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL
+const MUMBAI_RPC_URL = process.env.MUMBAI_RPC_URL
 const PRIVATE_KEY = process.env.PRIVATE_KEY || "0x"
 
 module.exports = {
@@ -33,6 +34,12 @@ module.exports = {
             saveDeployments: true,
             chainId: 5,
         },
+        mumbai: {
+            url: MUMBAI_RPC_URL,
+            accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
+            saveDeployments: true,
+            chainId: 80001,
+        },
         mainnet: {
             url: MAINNET_RPC_URL,
             accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
@@ -50,6 +57,12 @@ module.exports = {
             },
             {
                 version: "0.5.0",
+            },
+            {
+                version: "0.8.0",
+            },
+            {
+                version: "0.8.1",
             },
         ],
     },
