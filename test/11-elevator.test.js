@@ -1,8 +1,8 @@
-const { assert, expect } = require("chai")
+const { assert } = require("chai")
 const { deployments, ethers } = require("hardhat")
 
 describe("11-Elevator", async function () {
-    let deployer, attacker, elevator, elevatorAttack, building
+    let deployer, attacker, elevator, building
     beforeEach(async function () {
         accounts = await ethers.getSigners()
         deployer = accounts[0]

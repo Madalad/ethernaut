@@ -2,7 +2,7 @@ const { assert } = require("chai")
 const { deployments, ethers } = require("hardhat")
 
 describe("23-DexTwo", async function () {
-    let attacker, dexTwo, tokenOne, tokenTwo, dexTwoAttack
+    let attacker, dexTwo, tokenOne, tokenTwo, dexTwoAttack, myToken
     beforeEach(async function () {
         accounts = await ethers.getSigners()
         attacker = accounts[1]

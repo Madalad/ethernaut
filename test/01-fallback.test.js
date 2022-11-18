@@ -7,7 +7,7 @@ describe("01-Fallback", async function () {
         accounts = await ethers.getSigners()
         deployer = accounts[0]
         attacker = accounts[1]
-        await deployments.fixture(["all"])
+        await deployments.fixture(["01"])
         fallback = await ethers.getContract("Fallback")
     })
     it("should transfer ownership to attacker", async function () {

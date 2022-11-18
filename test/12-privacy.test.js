@@ -1,4 +1,4 @@
-const { assert, expect } = require("chai")
+const { assert } = require("chai")
 const { deployments, ethers } = require("hardhat")
 
 describe("12-Privacy", async function () {

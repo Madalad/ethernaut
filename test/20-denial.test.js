@@ -2,7 +2,7 @@ const { assert } = require("chai")
 const { deployments, ethers } = require("hardhat")
 
 describe("20-Denial", async function () {
-    let deployer, attacker, denial, alienCodexAttack
+    let deployer, attacker, denial, denialAttack
     beforeEach(async function () {
         accounts = await ethers.getSigners()
         deployer = accounts[0]
@@ -11,7 +11,7 @@ describe("20-Denial", async function () {
         denial = await ethers.getContract("Denial")
         denialAttack = await ethers.getContract("DenialAttack", attacker.address)
     })
-    it("should work", async function () {
+    it("should work as expected", async function () {
         /*
         Had to update call syntax to compile, so check updated Denial contract it works as intended
         */

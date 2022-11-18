@@ -7,7 +7,7 @@ describe("02-Fallout", async function () {
         deployer = accounts[0]
         attacker = accounts[1]
         user = accounts[2]
-        await deployments.fixture(["all"])
+        await deployments.fixture(["02"])
         fallout = await ethers.getContract("Fallout")
     })
     it("should transfer ownership to attacker", async function () {

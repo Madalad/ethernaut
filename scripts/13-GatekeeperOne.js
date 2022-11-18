@@ -10,7 +10,7 @@ async function main() {
 
     const { deployer } = await ethers.getNamedSigners()
     const initialBalance = await ethers.provider.getBalance(deployer.address)
-    const attack = await ethers.getContractAt("GatekeeperOneAttack", attackAddress)
+    const attack = await ethers.getContractAt("GatekeeperOneAttackV2", attackAddress)
 
     // test gas limits 200 at a time
     for (let i = 0; i < 41; i++) {

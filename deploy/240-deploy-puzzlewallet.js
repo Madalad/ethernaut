@@ -24,21 +24,6 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         log: true,
     })
 
-    //---------
-
-    /*const admin = deployer
-    const implementation = puzzleWallet.address
-    const initData = puzzleWallet.interface.encodeFunctionData("init(uint256)", ["100"])
-    const puzzleWallet = await deploy("PuzzleWallet", {
-        from: deployer,
-        args: [],
-        log: true,
-        proxy: {
-            proxyContract: "PuzzleProxy",
-        },
-        args:
-    })*/
-
     log("---------------------------------")
 }
 

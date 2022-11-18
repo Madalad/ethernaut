@@ -62,8 +62,4 @@ contract MagicNumAttack {
 
         magicNum.setSolver(solver);
     }
-
-    function test() public pure returns (uint256) {
-        return 26;
-    }
 }

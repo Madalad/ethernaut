@@ -7,7 +7,7 @@ import "../lessons/13-GatekeeperOne.sol";
 /**
  * Alternative version of the contract used to pass the level on Goerli network
  */
-contract GatekeeperOneAttack {
+contract GatekeeperOneAttackV2 {
     GatekeeperOne gatekeeperOne;
 
     event Success(uint256 gas);
