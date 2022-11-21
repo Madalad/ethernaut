@@ -23,7 +23,7 @@ describe("25-Motorbike", async function () {
         const implementationAddress = "0x" + implementationSlotData.slice(26, 66)
         implementation = await ethers.getContractAt("Engine", implementationAddress, attacker)
     })
-    it("should set admin to attacker", async function () {
+    it("should self destruct engine contract", async function () {
         // become upgrader of implementation contract
         await implementation.initialize()
 
