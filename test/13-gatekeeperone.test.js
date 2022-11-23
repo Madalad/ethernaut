@@ -64,7 +64,7 @@ describe("13-GatekeeperOne", async function () {
         }
 
         //const gasLimit = await getGasLimit()
-        const gasLimit = 500983
+        const gasLimit = 500974
         await gatekeeperOneAttack.enter(gateKey, { gasLimit: gasLimit })
 
         const entrant = await gatekeeperOne.entrant()

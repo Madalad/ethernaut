@@ -1,4 +1,4 @@
-const { assert } = require("chai")
+const { assert, expect } = require("chai")
 const { deployments, ethers } = require("hardhat")
 
 describe("20-Denial", async function () {
@@ -48,9 +48,6 @@ describe("20-Denial", async function () {
         await denial.connect(attacker).setWithdrawPartner(denialAttack.address)
 
         // attempt to withdraw
-        await denial.withdraw()
-        // above transaction should revert
-        // hardhat withdraw transaction goes through and sends owner the balance
-        // deploying DenialAttack.sol onto goerli and submitting instance to ethernaut contract passes the level
+        await expect(denial.withdraw({ gasLimit: 500_000 })).to.be.reverted
     })
 })
